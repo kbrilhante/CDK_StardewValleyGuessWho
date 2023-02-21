@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -28,30 +28,30 @@
         <h1>Guess Who?</h1>
         <h2>Stardew Valley Edition</h2>
         <div class="row">
-            <div id="charSelected" class="col-auto p-0 bg-danger">
-                <button id="btnSelect" class="btn btn-dark d-block mx-auto">Pick a Character</button>
+            <div id="charSelected" class="col-auto p-1">
+                <button id="btnSelect" class="btn btn-secondary bg-gradient d-block mx-auto">Pick a Character</button>
                 <img id="imgCharacter" src="./img/Abigail.png">
-                <h3 id="titleCharacter" class="text-light bg-dark bg-gradient py-2 rounded-1 border border-2 border-dark-subtle">Abigail</h3>
+                <h3 id="titleCharacter" class="text-light bg-dark-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle">Abigail</h3>
             </div>
             <!-- <div id="charList" class="col bg-info"></div> -->
-            <div id="charList" class="col bg-info">
+            <div id="charList" class="col bg-opacity-25 bg-dark bg-gradient border border-2 border-dark-subtle rounded-end-3 p-1">
                 <div class="row row-cols-auto">
-                    <div class="col charOn">
-                        <button id="Abigail" value="Abigail" class="btn">
+                    <div class="col">
+                        <button id="Abigail" value="Abigail" class="btn bg-gradient charOn">
                             <img src="./img/Abigail.png">
-                            <p class="fs-6">Abigail</p>
+                            <p class="py-1 fs-6">Abigail</p>
                         </button>
                     </div>
-                    <div class="col charOff">
-                        <button id="Krobus" value="Krobus" class="btn">
+                    <div class="col">
+                        <button id="Krobus" value="Krobus" class="btn bg-gradient charOn">
                             <img src="./img/Krobus.png">
-                            <p class="fs-6">Krobus</p>
+                            <p class="py-1 fs-6">Krobus</p>
                         </button>
                     </div>
-                    <div class="col charOn">
-                        <button id="Sebastian" value="Sebastian" class="btn">
+                    <div class="col">
+                        <button id="Sebastian" value="Sebastian" class="btn bg-gradient charOff">
                             <img src="./img/Sebastian.png">
-                            <p class="fs-6">Sebastian</p>
+                            <p class="py-1 fs-6">Sebastian</p>
                         </button>
                     </div>
                 </div>
