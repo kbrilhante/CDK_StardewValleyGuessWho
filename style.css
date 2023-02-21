@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+#charList img {
+    width: 80px;
+}
+
+.charOn {}
+
+.charOff {}
