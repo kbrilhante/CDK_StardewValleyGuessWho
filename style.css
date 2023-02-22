@@ -13,6 +13,10 @@ body {
     width: 90px;
 }
 
+#charList col {
+    padding: 0;
+}
+
 .charOn img {
     filter: none;
 }
@@ -25,6 +29,6 @@ body {
     margin: 3vh auto;
 }
 
-#optionsBar col, col-auto {
-    padding: 1vh;
+#optionsBar button {
+    margin: 1vh;
 }

@@ -1,10 +1,10 @@
 const villagersCSV = './data/villagers.csv';
 
-const charSelected = document.querySelector("#charSelected");
-// const btnSelect = document.querySelector("#btnSelect");
-// const imgCharacter = document.querySelector("#imgCharacter");
-// const titleCharacter = document.querySelector('#titleCharacter');
-const charList = document.querySelector("#charList");
+const optionsBar = document.getElementById("optionsBar");
+const instructions = document.getElementById('instructions');
+const btnNewGame = document.getElementById('btnNewGame');
+const charSelected = document.getElementById("charSelected");
+const charList = document.getElementById("charList");
 
 let charPicked = false;
 
@@ -27,22 +27,24 @@ async function getVillagers() {
         };
         villagers.push(obj);
     }
-
-    initialize();
     newGame();
 }
 
-function initialize() {
-    createCharButtons();
+function newGame() {
+    charSelected.innerHTML = '';
+    charPicked = false;
+    instructions.textContent = 'Pick your character';
+    btnNewGame.style.display = 'none';
+    createCharbtnCharacters();
 }
 
-function createCharButtons() {
+function createCharbtnCharacters() {
     charList.innerHTML = '';
     villagers.forEach(villager => {
         const divCol = document.createElement('div');
-        divCol.className = 'col p-0';
+        divCol.className = 'col';
         charList.appendChild(divCol);
-        const btn = document.createElement('button');
+        const btn = document.createElement('btnCharacter');
         btn.id = villager.character;
         btn.value = true;
         btn.className = 'btn bg-gradient charOn';
@@ -59,34 +61,32 @@ function createCharButtons() {
 }
 
 function handle(btnID) {
-    const button = document.getElementById(btnID);
-    
+    const btnCharacter = document.getElementById(btnID);
     if (charPicked) {
-        const p = button.children[1];
-        const btnValue = button.value;
+        const p = btnCharacter.children[1];
+        const btnValue = btnCharacter.value;
         if (btnValue) {
-            button.value = false;
-            button.classList.remove('charOn');
-            button.classList.add('charOff');
+            btnCharacter.value = false;
+            btnCharacter.classList.remove('charOn');
+            btnCharacter.classList.add('charOff');
             p.classList.remove('bg-primary-subtle');
             p.classList.add('bg-light');
             p.classList.add('text-dark');
         } else {
-            button.value = true;
-            button.classList.remove('charOff');
-            button.classList.add('charOn');
+            btnCharacter.value = true;
+            btnCharacter.classList.remove('charOff');
+            btnCharacter.classList.add('charOn');
             p.classList.remove('bg-light');
             p.classList.remove('text-dark');
             p.classList.add('bg-primary-subtle');
         }
     } else {
-        const characterSrc = button.children[0].src;
+        const characterSrc = btnCharacter.children[0].src;
         charSelected.innerHTML = "";
-        const btnNew = document.createElement('button');
-        btnNew.className = 'btn btn-dark bg-gradient d-block mx-auto';
-        btnNew.onclick = newGame;
-        btnNew.textContent = 'New Game';
-        charSelected.appendChild(btnNew);
+        const yourPick = document.createElement('h4');
+        yourPick.textContent = 'Your pick:';
+        yourPick.className = 'text-light bg-dark-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle'
+        charSelected.appendChild(yourPick);
         const charImg = document.createElement('img');
         charImg.src = characterSrc;
         charSelected.appendChild(charImg);
@@ -95,11 +95,8 @@ function handle(btnID) {
         charName.className = 'text-light bg-success-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle'
         charSelected.appendChild(charName);
         charPicked = true;
+        instructions.textContent = "";
+        btnNewGame.style.display = "inline-block";
     }
 }
 
-function newGame() {
-    charSelected.innerHTML = '';
-    charPicked = false;
-    createCharButtons();
-}
