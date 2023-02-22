@@ -1,10 +1,12 @@
 const villagersCSV = './data/villagers.csv';
 
 const charSelected = document.querySelector("#charSelected");
-const btnSelect = document.querySelector("#btnSelect");
-const imgCharacter = document.querySelector("#imgCharacter");
-const titleCharacter = document.querySelector('#titleCharacter');
+// const btnSelect = document.querySelector("#btnSelect");
+// const imgCharacter = document.querySelector("#imgCharacter");
+// const titleCharacter = document.querySelector('#titleCharacter');
 const charList = document.querySelector("#charList");
+
+let charPicked = false;
 
 let villagers = [];
 getVillagers();
@@ -17,7 +19,7 @@ async function getVillagers() {
 
     const keys = data[0].split(',');
 
-    for(let i = 1; i < data.length; i++) {
+    for (let i = 1; i < data.length; i++) {
         const line = data[i].split(',');
         const obj = {
             [keys[0]]: line[0],
@@ -25,9 +27,9 @@ async function getVillagers() {
         };
         villagers.push(obj);
     }
-    console.log(villagers);
 
     initialize();
+    newGame();
 }
 
 function initialize() {
@@ -35,8 +37,8 @@ function initialize() {
 }
 
 function createCharButtons() {
+    charList.innerHTML = '';
     villagers.forEach(villager => {
-        console.log(villager);
         const divCol = document.createElement('div');
         divCol.className = 'col';
         charList.appendChild(divCol);
@@ -54,4 +56,50 @@ function createCharButtons() {
         p.className = 'py-1 fs-6 text-light bg-primary-subtle bg-gradient border border-2 border-dark-subtle rounded-1';
         btn.appendChild(p);
     });
+}
+
+function handle(btnID) {
+    const button = document.getElementById(btnID);
+    
+    if (charPicked) {
+        const p = button.children[1];
+        const btnValue = button.value;
+        if (btnValue) {
+            button.value = false;
+            button.classList.remove('charOn');
+            button.classList.add('charOff');
+            p.classList.remove('bg-primary-subtle');
+            p.classList.add('bg-light');
+            p.classList.add('text-dark');
+        } else {
+            button.value = true;
+            button.classList.remove('charOff');
+            button.classList.add('charOn');
+            p.classList.remove('bg-light');
+            p.classList.remove('text-dark');
+            p.classList.add('bg-primary-subtle');
+        }
+    } else {
+        const characterSrc = button.children[0].src;
+        charSelected.innerHTML = "";
+        const btnNew = document.createElement('button');
+        btnNew.className = 'btn btn-dark bg-gradient d-block mx-auto';
+        btnNew.onclick = newGame;
+        btnNew.textContent = 'New Game';
+        charSelected.appendChild(btnNew);
+        const charImg = document.createElement('img');
+        charImg.src = characterSrc;
+        charSelected.appendChild(charImg);
+        const charName = document.createElement('h3');
+        charName.textContent = btnID;
+        charName.className = 'text-light bg-success-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle'
+        charSelected.appendChild(charName);
+        charPicked = true;
+    }
+}
+
+function newGame() {
+    charSelected.innerHTML = '';
+    charPicked = false;
+    createCharButtons();
 }
