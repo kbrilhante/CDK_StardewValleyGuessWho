@@ -10,6 +10,7 @@ body {
 #charList img, p {
     display: block;
     margin: auto;
+    width: 90px;
 }
 
 .charOn img {
