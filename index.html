@@ -29,29 +29,28 @@
         <h2>Stardew Valley Edition</h2>
         <div class="row">
             <div id="charSelected" class="col-auto p-1">
-                <button id="btnSelect" class="btn btn-secondary bg-gradient d-block mx-auto">Pick a Character</button>
+                <button id="btnSelect" class="btn btn-dark bg-gradient d-block mx-auto" onclick="pick()">Pick a Character</button>
                 <img id="imgCharacter" src="./img/Abigail.png">
-                <h3 id="titleCharacter" class="text-light bg-dark-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle">Abigail</h3>
+                <h3 id="titleCharacter" class="text-light bg-success-subtle bg-gradient py-2 rounded-start-3 border border-2 border-dark-subtle">Abigail</h3>
             </div>
-            <!-- <div id="charList" class="col bg-info"></div> -->
-            <div id="charList" class="col bg-opacity-25 bg-dark bg-gradient border border-2 border-dark-subtle rounded-end-3 p-1">
-                <div class="row row-cols-auto row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
+            <div class="col bg-opacity-25 bg-dark bg-gradient border border-2 border-dark-subtle rounded-end-3 p-1">
+                <div id="charList" class="row row-cols-auto row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                     <div class="col">
                         <button id="Abigail" value="Abigail" class="btn bg-gradient charOn">
                             <img src="./img/Abigail.png">
-                            <p class="py-1 fs-6 text-light bg-secondary-subtle bg-gradient border border-2 border-secondary-subtle rounded-1">Abigail</p>
+                            <p class="py-1 fs-6 text-light bg-primary-subtle bg-gradient border border-2 border-dark-subtle rounded-1">Abigail</p>
                         </button>
                     </div>
                     <div class="col">
                         <button id="Krobus" value="Krobus" class="btn bg-gradient charOn">
                             <img src="./img/Krobus.png">
-                            <p class="py-1 fs-6 text-light bg-secondary-subtle border border-2 border-secondary-subtle rounded-1">Krobus</p>
+                            <p class="py-1 fs-6 text-light bg-primary-subtle bg-gradient border border-2 border-dark-subtle rounded-1">Krobus</p>
                         </button>
                     </div>
                     <div class="col">
                         <button id="Sebastian" value="Sebastian" class="btn bg-gradient charOff">
                             <img src="./img/Sebastian.png">
-                            <p class="py-1 fs-6 text-light bg-secondary bg-gradient border border-2 border-secondary-subtle rounded-1">Sebastian</p>
+                            <p class="py-1 fs-6 text-light bg-secondary bg-gradient border border-2 border-dark-subtle rounded-1">Sebastian</p>
                         </button>
                     </div>
                 </div>
@@ -60,6 +59,7 @@
     </div>
 
     <!-- <script src="../../script/topBar.js"></script> -->
+    <script src="./script/main.js"></script>
 </body>
 
 </html>
