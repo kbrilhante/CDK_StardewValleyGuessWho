@@ -9,12 +9,13 @@ body {
 
 #charList img, p {
     display: block;
-    width: 60px;
     margin: auto;
 }
 
-.charOn {
-
+.charOn img {
+    filter: none;
 }
 
-.charOff {}
+.charOff img {
+    filter: grayscale(1);
+}
