@@ -36,6 +36,8 @@ function newGame() {
     instructions.textContent = 'Pick your character';
     btnNewGame.style.display = 'none';
     createCharbtnCharacters();
+    addEventListener("resize", resizeButtons);
+    resizeButtons();
 }
 
 function createCharbtnCharacters() {
@@ -46,8 +48,8 @@ function createCharbtnCharacters() {
         charList.appendChild(divCol);
         const btn = document.createElement('button');
         btn.id = villager.character;
-        btn.value = 'on';
-        btn.className = 'btn bg-gradient charOn';
+        btn.value = true;
+        btn.className = 'btn bg-gradient charButton charOn';
         btn.setAttribute("onclick", "handle(this.id)");
         divCol.appendChild(btn);
         const img = document.createElement("img");
@@ -64,15 +66,15 @@ function handle(btnID) {
     const btnCharacter = document.getElementById(btnID);
     if (charPicked) {
         const p = btnCharacter.children[1];
-        if (btnCharacter.value === 'on') {
-            btnCharacter.value = 'off';
+        if (btnCharacter.value === 'true') {
+            btnCharacter.value = false;
             btnCharacter.classList.remove('charOn');
             btnCharacter.classList.add('charOff');
             p.classList.remove('bg-primary-subtle');
             p.classList.add('bg-light');
             p.classList.add('text-dark');
         } else {
-            btnCharacter.value = 'on';
+            btnCharacter.value = true;
             btnCharacter.classList.remove('charOff');
             btnCharacter.classList.add('charOn');
             p.classList.remove('bg-light');
@@ -99,3 +101,12 @@ function handle(btnID) {
     }
 }
 
+function resizeButtons() {
+    let csCharList = getComputedStyle(charList)
+    console.log(csCharList);
+
+}
+
+function getXMeasurements (element) {
+    
+}
