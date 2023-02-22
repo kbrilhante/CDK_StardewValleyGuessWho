@@ -7,15 +7,14 @@ body {
     text-align: center;
 }
 
-#charList img, p {
-    display: block;
-    margin: auto;
-    width: 90px;
+#charList div {
+    padding: 0.2vw;
 }
 
-#charList col {
-    padding: 0;
+#charList img, p {
+    width: 6vw;
 }
+
 
 .charOn img {
     filter: none;
