@@ -1,4 +1,4 @@
-const villagersCSV = 'villagers.csv';
+const villagersCSV = './data/villagers.csv';
 
 const optionsBar = document.getElementById("optionsBar");
 const instructions = document.getElementById('instructions');
