@@ -16,7 +16,8 @@ async function getVillagers() {
     const request = await fetch(villagersCSV);
     const response = await request.text();
 
-    console.log('got villagers', response);
+    console.log('got villagers');
+    console.log(response);
 
     const data = response.split('\r\n');
 
