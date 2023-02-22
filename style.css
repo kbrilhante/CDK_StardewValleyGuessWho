@@ -20,3 +20,11 @@ body {
 .charOff img {
     filter: grayscale(1);
 }
+
+#optionsBar {
+    margin: 3vh auto;
+}
+
+#optionsBar col, col-auto {
+    padding: 1vh;
+}
