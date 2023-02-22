@@ -40,7 +40,7 @@ function createCharButtons() {
     charList.innerHTML = '';
     villagers.forEach(villager => {
         const divCol = document.createElement('div');
-        divCol.className = 'col';
+        divCol.className = 'col p-0';
         charList.appendChild(divCol);
         const btn = document.createElement('button');
         btn.id = villager.character;
