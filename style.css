@@ -11,15 +11,6 @@ body {
     margin: 0;
 }
 
-/* #charList div {
-    padding: 0.1vw;
-}
-
-#charList img, p {
-    width: 9vw;
-} */
-
-
 .charOn img {
     filter: none;
 }
@@ -30,8 +21,4 @@ body {
 
 #optionsBar {
     margin: 3vh auto;
-}
-
-#optionsBar button {
-    margin: 1vh;
 }
