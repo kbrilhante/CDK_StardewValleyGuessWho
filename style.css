@@ -7,13 +7,17 @@ body {
     text-align: center;
 }
 
-#charList div {
-    padding: 0.2vw;
+#charList {
+    margin: 0;
+}
+
+/* #charList div {
+    padding: 0.1vw;
 }
 
 #charList img, p {
-    width: 6vw;
-}
+    width: 9vw;
+} */
 
 
 .charOn img {

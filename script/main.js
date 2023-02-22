@@ -44,9 +44,9 @@ function createCharbtnCharacters() {
         const divCol = document.createElement('div');
         divCol.className = 'col';
         charList.appendChild(divCol);
-        const btn = document.createElement('btnCharacter');
+        const btn = document.createElement('button');
         btn.id = villager.character;
-        btn.value = true;
+        btn.value = 'on';
         btn.className = 'btn bg-gradient charOn';
         btn.setAttribute("onclick", "handle(this.id)");
         divCol.appendChild(btn);
@@ -64,16 +64,15 @@ function handle(btnID) {
     const btnCharacter = document.getElementById(btnID);
     if (charPicked) {
         const p = btnCharacter.children[1];
-        const btnValue = btnCharacter.value;
-        if (btnValue) {
-            btnCharacter.value = false;
+        if (btnCharacter.value === 'on') {
+            btnCharacter.value = 'off';
             btnCharacter.classList.remove('charOn');
             btnCharacter.classList.add('charOff');
             p.classList.remove('bg-primary-subtle');
             p.classList.add('bg-light');
             p.classList.add('text-dark');
         } else {
-            btnCharacter.value = true;
+            btnCharacter.value = 'on';
             btnCharacter.classList.remove('charOff');
             btnCharacter.classList.add('charOn');
             p.classList.remove('bg-light');
