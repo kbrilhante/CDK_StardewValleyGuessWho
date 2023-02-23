@@ -24,7 +24,7 @@
 
 <body>
     <div class="topBar canvas-body-content"></div>
-    <div class="container-lg">
+    <div class="container-lg mb-5">
         <h1>Guess Who?</h1>
         <h2>Stardew Valley Edition</h2>
         <div id="optionsBar" class="row row-cols-1">
@@ -32,14 +32,14 @@
                 <h4 id="instructions"></h4>
             </div>
             <div class="col-auto mx-auto">
-                <button id="btnNewGame" class="btn btn-dark bg-gradient mx-auto" onclick="newGame()">New Game</button>
+                <button id="btnNewGame" class="btn btn-dark btn-lg bg-gradient mx-auto" onclick="random()">Random Pick</button>
             </div>
         </div>
         <div class="row">
-            <div id="charSelected" class="col-auto p-1"></div>
-            <div class="col bg-opacity-25 bg-dark bg-gradient border border-2 border-dark-subtle rounded-end-3 p-1">
-                <!-- <div id="charList" class="row"></div> -->
-                <div id="charList" class="row row-cols-auto row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6"></div>
+            <div id="charSelected" class="col-auto bg-opacity-25 bg-dark bg-gradient border border-2 border-end-0 border-dark-subtle rounded-start-3 p-1"></div>
+            <div id="charListCol" class="col bg-opacity-25 bg-dark bg-gradient border border-2 border-start-0 border-dark-subtle rounded-end-3 p-1">
+                <div id="charListRow" class="row"></div>
+                <!-- <div id="charList" class="row row-cols-auto row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6"></div> -->
             </div>
         </div>
     </div>
