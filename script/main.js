@@ -161,6 +161,7 @@ function resizeImages(rowSize, availableWidth) {
 
 function getXMBP(element) { // gets left and right margins, borders and padding of an element
     let measurements = 0;
+    console.dir(element)
     const cs = getComputedStyle(element);
     measurements += parseInt(cs.marginLeft);
     measurements += parseInt(cs.marginRight);
