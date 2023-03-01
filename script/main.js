@@ -18,7 +18,7 @@ async function getVillagers() {
     const response = await request.text();
 
     console.log('got villagers');
-    // console.log(response);
+    console.log(response);
 
     const data = response.split('\r\n');
 
@@ -32,6 +32,7 @@ async function getVillagers() {
         };
         villagers.push(obj);
     }
+
     console.log(villagers);
     newGame();
 }
