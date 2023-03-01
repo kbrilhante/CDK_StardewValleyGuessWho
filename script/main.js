@@ -32,6 +32,7 @@ async function getVillagers() {
         };
         villagers.push(obj);
     }
+    console.log(villagers);
     newGame();
 }
 
